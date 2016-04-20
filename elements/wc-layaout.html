@@ -1,0 +1,32 @@
+<dom-module id="wc-layaout">
+    <template>
+        <style>
+
+        </style>
+        <paper-drawer-panel>
+            <paper-header-panel drawer>
+                <paper-toolbar></paper-toolbar>
+                <div> Drawer panel... </div>
+            </paper-header-panel>
+            <paper-header-panel main>
+                <paper-toolbar>
+                    <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                    <span class="title">BabelInstruments</span>
+                </paper-toolbar>
+                <wc-instruments instruments="{{instruments}}"></wc-instruments>
+            </paper-header-panel>
+        </paper-drawer-panel>
+        <wc-source instruments="{{instruments}}" instrument="{{instrument}}"></wc-source>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'wc-layaout',
+            properties: {
+
+
+            },
+        })
+
+    })();
+    </script>

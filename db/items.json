@@ -1,0 +1,81 @@
+[{
+    "name"        : "Music Man John Petrucci Majesty 6 AD",
+    "category"    : "Guitar",
+    "subcategory" : "Electric",
+    "image"       : "https://www.thomann.de/pics/prod/335452.jpg",
+    "description" : "Music Man John Petrucci Majesty 6 AD, electric guitar, John Petrucci signature model, basswood body, maple top, mahogany thomann neck (neck-thru), ebony fretboard, 24 stainless steel jumbo frets, 648mm scale, 17 radius, 43mm nut width, Schaller M6-IND locking tuners, 2x DiMarzio Illuminator pickups, Custom Music Man JP piezo floating tremolo, Fishman piezo system with adjustable EQ, gain boost via push/push poti, coilsplitting thomann via push/push poti, momentary switch for mono or stereo jack, finish: arctic dream incl. case",
+    "brand"       : "Music Man",
+    "price"       : 4.199
+},{
+    "name"        : "Fender Artisan Okoume Tele Roasted",
+    "category"    : "Guitar",
+    "subcategory" : "Electric",
+    "image"       : "https://www.thomann.de/pics/prod/361316.jpg",
+    "description" : "Fender Artisan Okoume Tele Roasted Maple, e-guitar, Okoume body, roasted maple neck, 10/56 large neckshape, 9,5 radius, thomann 21 vintage tall frets, vintage hardware, 2x Custom Shop hand-wound '58 single-coil Tele pickups, 3-way toggle switch, modern wiring, vintage-style tuner with Fender Logo, gold hardware, 648 mm scale, color: Chocolate 2-Color Sunburst, incl. Fender Tweed Case, CruzTools, certificate",
+    "brand"       : "Fender",
+    "price"       : 3.159
+},{
+    "name"        : "Gretsch Brian Setzer G6120 SSLVO",
+    "category"    : "Guitar",
+    "subcategory" : "Electric",
+    "image"       : "https://www.thomann.de/pics/prod/186121.jpg",
+    "description" : "Gretsch Brian Setzer G6120 SSLVO electric guitar, 3ply arched laminated top, 3 ply laminated maple body(arched back), laminated thomann rock maple neck with ebony fretboard, 22 medium frets, 2 x brian setzer signature TV jones pickups, Schaller locking tuners, bigsby B6CB tremolo, Finish Vintage Orange Lacquer, incl.Case",
+    "brand"       : "Gretsch",
+    "price"       : 3.869
+
+ },{
+    "name"        : "Takamine EF341SC",
+    "category"    : "Guitar",
+    "subcategory" : "Acoustic",
+    "image"       : "https://www.thomann.de/pics/prod/152211.jpg",
+    "description" : "Bruce Springsteen model Design: Dreadnought With cutaway Solid cedar top Body & sides: Maple Top: Solid cedar Bridge & fretboard: Rosewood Fretboard inlays: Perlmutt  dots CT4B Preamp thomann with tuner + pickup Colour: Black high-gloss Incl. Case",
+    "brand"       : "Takamine",
+    "price"       : 1.169
+},{
+    "name"        : "Maton EBG808C Michael Fix /w Case",
+    "category"    : "Guitar",
+    "subcategory" : "Acoustic",
+    "image"       : "https://www.thomann.de/pics/prod/239747.jpg",
+    "description" : "Maton EBG808C Michael Fix with case, acoustic steel guitar, signature, venetian cutaway, orchestra model, solid spruce top, back thomann & sides: solid queensland maple, queensland maple neck, ebony fretboard, nut width 44,1 mm, scale: 650 mm, Maton AP5Pro pickup system, finish: natural satin, Made in Australia, incl. case",
+   "price"       : 2.499
+},{
+    "name"        : "Gibson SJ-200 Bob Dylan Players Ed.",
+    "category"    : "Guitar",
+    "subcategory" : "Acoustic",
+    "image"       : "https://www.thomann.de/pics/prod/353580.jpg",
+    "description" : "Gibson SJ-200 Bob Dylan Collectors Edition, handmade, solid adirondack spruce top, AAA maple back and sides, maple neck, thomann rosewood fretboard, MoP Bella Voce inlays, 20 frets, gold tuners, LR Baggs Anthem pickup, includes case. Colour: Vintage Sunburst, made in USA",
+    "brand"       : "Gibson",
+    "price"       : 4.699
+},{
+    "name"        : "Sadowsky NYC Will Lee 4 DCM #6719",
+    "category"    : "Bass",
+    "subcategory" : "Electric",
+    "image"       : "https://www.thomann.de/pics/prod/362919.jpg",
+    "description" : "Sadowsky NYC Will Lee 4 DCM #6719, 4 string bass guitar, alder body, maple neck thomann with (Madagascar) rosewood fingerboad, white dot inlays, 22 frets, 12 radius, 1,45 Nut Width, tortoise pickguard, 2x Sadowsky Single Coil Pickups, Sadowsky Preamp with Vintage Tone Control and Mid-Boost Circuit, chrome hardware, weight: 3,58kg, incl. Sadowsky Case, made in USA, colour: Dark Cherry thomann Metallic",
+    "brand"       : "Sadowsky",
+    "price"       : 5.177
+},{
+    "name"        : "Fender 70 J-Bass OW/P.Paisley HR MB",
+    "category"    : "Bass",
+    "subcategory" : "Electric",
+    "image"       : "https://www.thomann.de/pics/prod/350177.jpg",
+    "description" : "Fender 70 J-Bass OW/P.Paisley HR MB, Masterbuilt, bass guitar selected light weight alder body, quartersawn maple neck, 1960 Jazz Bass neck profil, selected dark indian round laminated rosewood fingerboard, 9,5 fretboard radius, fretboard binding, MoP Block inlays, bone nut, 20 medium jumbo frets, 2 Vintage Jazz Bass Single Coil Pickup, white pickguard, colour: Olympic White over Pink Paisley Heavy Relic, Matching Headstock, incl. original Fender case, weight: 4,22 kg, serial: R84455",
+    "brand"       : "Fender",
+    "price"       : 4.999
+},{
+    "name"        : "Furch B61-4-CM",
+    "category"    : "Bass",
+    "subcategory" : "Acoustic",
+    "image"       : "https://www.thomann.de/pics/prod/286859.jpg",
+    "description" : "Venetian cutaway Solid cedar top Back and sides: Sapele Neck: Mahogany Fretboard: Ebony Scale: 860 mm LR Baggs EAS VTC Colour: Natural Satin Incl. Gig bag Made in Czech thomann Republic",
+    "brand"       : "Furch",
+    "price"       :  1.310
+},{
+    "name"        : "Warwick Alien Deluxe Black",
+    "category"    : "Bass",
+    "subcategory" : "Acoustic",
+    "image"       : "https://www.thomann.de/pics/prod/324600.jpg",
+    "description" : "4 String Laminated spruce top Bubinga laminated back and sides Mahogany neck Satin finish 24 Frets Rosewood fretboard 32 Medium scaleNut width: 38.5 mm Fishman Sonicore piezo pickup thomann and Sonitone preamp Warwick machine heads Chrome hardware Warwick Security Locks Just-a-Nut III Finish: Black High-gloss",
+    "brand"       : "Warwick",
+    "price"       :  888
+}]

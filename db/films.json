@@ -1,0 +1,41 @@
+[{
+    "name"        : "Music Man John Petrucci Majesty 6 AD",
+    "category"    : "Guitar",
+    "subcategory" : "Electric",
+    "image"       : "http://placehold.it/350x150/FFC107/000000",
+    "description" : "Music Man John Petrucci Majesty 6 AD, electric guitar, John Petrucci signature model, basswood body, maple top, mahogany thomann neck (neck-thru), ebony fretboard, 24 stainless steel jumbo frets, 648mm scale, 17 radius, 43mm nut width, Schaller M6-IND locking tuners, 2x DiMarzio Illuminator pickups, Custom Music Man JP piezo floating tremolo, Fishman piezo system with adjustable EQ, gain boost via push/push poti, coilsplitting thomann via push/push poti, momentary switch for mono or stereo jack, finish: arctic dream incl. case",
+    "brand"       : "Music Man",
+    "price"       : 4.199,
+},{
+    "title"       : "The Proposal",
+    "genre"       : "Comedia",
+    "rate"        : 4,
+    "image"       : "http://placehold.it/350x150/FFC107/000000",
+    "description" : "EEUU. 1977",
+    "sessions"    : ["18:00", "20:00", "22:00"],
+    "ref"         : "C-ib-_W1weM"
+},{
+    "title"       : "The Good Girl",
+    "genre"       : "Drama Romántico",
+    "rate"        : 4,
+    "image"       : "http://placehold.it/350x150/FFC107/000000",
+    "description" : "EEUU. 1977",
+    "sessions"    : ["18:00", "20:00", "22:00"],
+    "ref"         : "A71mlM0u1bg"
+},{
+    "title"       : "Raising Helen",
+    "genre"       : "Drama Romántico",
+    "rate"        : 4,
+    "image"       : "http://placehold.it/350x150/FFC107/000000",
+    "description" : "EEUU. 1977",
+    "sessions"    : ["18:00", "20:00", "22:00"],
+    "ref"         : "5aWTvr1qaBk"
+},{
+    "title"       : "Revenge Of The Sith",
+    "genre"       : "Ficción Aventura",
+    "rate"        : 4,
+    "image"       : "http://placehold.it/350x150/FFC107/000000",
+    "description" : "EEUU. 1977",
+    "sessions"    : ["18:00", "20:00", "22:00"],
+    "ref"         : "14tMHjDkKLA"
+}]

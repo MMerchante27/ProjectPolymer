@@ -1,0 +1,28 @@
+<dom-module id="wc-source">
+    <template>
+        <iron-ajax id="ajax" auto url="../db/items.json" handle-as="json" on-response="responseAction" debounce-duration="300"></iron-ajax>
+    </template>
+    <script>
+    (function() {
+        var instruments;
+        Polymer({
+            is: 'wc-source',
+            properties: {
+                instruments: {
+                    type: Array,
+                    value: function() {
+                        return [];
+                    },
+                    notify: true
+                },
+            },
+
+            responseAction: function(data) {
+                //this.items = JSON.parse(data.detail.response);
+                this.instruments = data.detail.response;
+                console.log(this.instruments);
+            }
+        });
+    })();
+    </script>
+</dom-module>

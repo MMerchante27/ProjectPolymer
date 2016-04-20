@@ -1,0 +1,35 @@
+<dom-module id="wc-instruments">
+    <template>
+        <style>
+        .container {
+            padding: 20px;
+            width: 400px;
+            height: 200px;
+            display: inline-block;
+        }
+        
+        .instrument {
+            margin: 10px;
+        }
+        </style>
+        <template is="dom-repeat" items="{{instruments}}" as="instrument">
+            <wc-instrument name="{{instrument.name}}" category="{{instrument.category}}" subcategory="{{instrument.subcategory}}" image="{{instrument.image}}" description="{{instrument.description}}" brand="{{instrument.brand}}" price="{{instrument.price}}">
+            </wc-instrument>
+        </template>
+    </template>
+    <script>
+    Polymer({
+        is: 'wc-instruments',
+
+        properties: {
+            instruments: {
+                type: Array,
+                value: function() {
+                    return [];
+                }
+            }
+        }
+
+    });
+    </script>
+</dom-module>
