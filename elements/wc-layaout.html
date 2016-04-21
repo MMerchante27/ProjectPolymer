@@ -1,19 +1,73 @@
 <dom-module id="wc-layaout">
     <template>
         <style>
-
+        .button {
+            text-transform: initial;
+            width: 100%;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .subcategories {
+            position: absolute;
+            right: 0px;
+        }
         </style>
         <paper-drawer-panel>
-            <paper-header-panel drawer>
+            <paper-header-panel drawer scroll>
                 <paper-toolbar></paper-toolbar>
-                <div> Drawer panel... </div>
+                <paper-menu>
+                    <paper-button id="btn" class="button" raised value="All" on-tap="selectCategory"> All elements </paper-button>
+                    <paper-menu>
+                        <paper-submenu>
+                            <paper-button id="btn1" class="button" raised value="Guitar" on-tap="selectCategory"> Guitars </paper-button>
+                            <paper-menu class="menu-content">
+                                <div class="container">
+                                    <div class="subcategories">
+                                        <paper-button id="cat1" class="button" raised value="Electric" on-tap="selectSubCategory"> Electric </paper-button>
+                                        <paper-button id="cat2" class="button" raised value="Acoustic" on-tap="selectSubCategory"> Acoustic </paper-button>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </paper-menu>
+                        </paper-submenu>
+                        <paper-submenu>
+                            <paper-button id="btn2" class="button" raised value="Bass" on-tap="selectCategory"> Basses </paper-button>
+                            <paper-menu class="menu-content">
+                                <div class="subcategories">
+                                    <paper-button id="cat3" class="button" raised value="Electric" on-tap="selectSubCategory"> Electric </paper-button>
+                                    <paper-button id="cat4" class="button" raised value="Acoustic" on-tap="selectSubCategory"> Acoustic </paper-button>
+                                </div>
+                            </paper-menu>
+                        </paper-submenu>
+                    </paper-menu>
+                    <!--  <paper-menu>
+                    <paper-submenu>
+                        <paper-menu class="menu-content">
+                           
+                                <paper-button id="btn" class="button" raised value="All" on-tap="selectCategory"> All elements </paper-button>
+                                 <paper-menu>
+                                <paper-button id="btn1" class="button" raised value="Guitar" on-tap="selectCategory"> Guitars </paper-button>
+
+                               
+                                </div>
+                            </paper-menu>
+                    </paper-submenu>
+                    </paper-menu> -->
             </paper-header-panel>
             <paper-header-panel main>
                 <paper-toolbar>
                     <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
                     <span class="title">BabelInstruments</span>
                 </paper-toolbar>
-                <wc-instruments instruments="{{instruments}}"></wc-instruments>
+                <div class="categoria"></div>
+                <wc-instruments instruments="{{selected}}"></wc-instruments>
             </paper-header-panel>
         </paper-drawer-panel>
         <wc-source instruments="{{instruments}}" instrument="{{instrument}}"></wc-source>
@@ -23,9 +77,106 @@
         Polymer({
             is: 'wc-layaout',
             properties: {
+                instruments: {
+                    type: Array,
+                    value: function() {
+                        return [];
+                    }
+                },
+                instruments: {
+                    type: Array,
+                    value: function() {
+                        return [];
+                    }
+                },
 
-
+                selected: {
+                    type: Array,
+                    value: function() {
+                        return [];
+                    }
+                }
             },
+
+            ready: function() {
+            },
+
+            selectSubCategory: function(e) {
+                var selectedAll = [];
+                var selectedGuitarElect = [];
+                var selectedBassElect = [];
+                var selectedGuitarAcoust = [];
+                var selectedBassAcoust = [];
+                var selectedBassCat = [];
+                var ide = e.target.getAttribute('id');
+                var clase = this.$[ide].getAttribute('value');
+
+                if (clase == "Electric") {
+                    for (i = 0; i < this.instruments.length; i++) {
+                        if ((this.instruments[i].category == "Guitar") && (this.instruments[i].subcategory == "Electric")) {
+                            console.log(this.instruments[i]);
+                            selectedGuitarElect.push(this.instruments[i]);
+                            this.selected = selectedGuitarElect.slice();
+                        } else if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Electric")) {
+                            selectedBassElect.push(this.instruments[i]);
+                            this.selected = selectedBassElect.slice();
+
+                        }
+
+                    }
+                } else if (clase == "Acoustic") {
+                    for (i = 0; i < this.instruments.length; i++) {
+                        if ((this.instruments[i].category == "Guitar") && (this.instruments[i].subcategory == "Acoustic")) {
+
+                            selectedGuitarAcoust.push(this.instruments[i]);
+                            this.selected = selectedGuitarAcoust.slice();
+
+                        } else if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Acoustic")) {
+
+                            selectedBassAcoust.push(this.instruments[i]);
+                            this.selected = selectedBassAcoust.slice();
+                        }
+                    }
+
+
+
+                }
+
+                console.log("Final", this.selected);
+            },
+
+            selectCategory: function(e) {
+                var selectedAll = [];
+                var selectedGuitar = [];
+                var selectedBass = [];
+                var ide = e.target.getAttribute('id');
+                var clase = this.$[ide].getAttribute('value');
+                if (clase == "All") {
+                    this.selected = this.instruments;
+                } else {
+                    if (clase == "Guitar") {
+                        for (i = 0; i < this.instruments.length; i++) {
+                            if (this.instruments[i].category == "Guitar") {
+                                selectedGuitar.push(this.instruments[i]);
+                                this.selected = selectedGuitar.slice();
+                            }
+                        }
+                    } else if (clase == "Bass") {
+                        for (i = 0; i < this.instruments.length; i++) {
+                            if (this.instruments[i].category == "Bass") {
+
+                                selectedBass.push(this.instruments[i]);
+                                this.selected = selectedBass.slice();
+
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+
         })
 
     })();

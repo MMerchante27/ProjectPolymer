@@ -43,6 +43,7 @@
     "paper-dialog": "PolymerElements/paper-dialog#^1.0.4",
     "iron-icon": "PolymerElements/iron-icon#^1.0.8",
     "paper-drawer-panel": "PolymerElements/paper-drawer-panel#^1.0.9",
-    "iron-collapse": "PolymerElements/iron-collapse#^1.0.8"
+    "iron-collapse": "PolymerElements/iron-collapse#^1.0.8",
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2"
   }
 }

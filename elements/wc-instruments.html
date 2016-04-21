@@ -2,9 +2,6 @@
     <template>
         <style>
         .container {
-            padding: 20px;
-            width: 400px;
-            height: 200px;
             display: inline-block;
         }
         
@@ -13,7 +10,9 @@
         }
         </style>
         <template is="dom-repeat" items="{{instruments}}" as="instrument">
-            <wc-instrument name="{{instrument.name}}" category="{{instrument.category}}" subcategory="{{instrument.subcategory}}" image="{{instrument.image}}" description="{{instrument.description}}" brand="{{instrument.brand}}" price="{{instrument.price}}">
+            <div class="container">
+                <wc-instrument name="{{instrument.name}}" category="{{instrument.category}}" subcategory="{{instrument.subcategory}}" image="{{instrument.image}}" description="{{instrument.description}}" brand="{{instrument.brand}}" price="{{instrument.price}}">
+            </div>
             </wc-instrument>
         </template>
     </template>

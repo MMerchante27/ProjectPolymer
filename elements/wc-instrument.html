@@ -1,12 +1,62 @@
 <dom-module id="wc-instrument">
     <template>
-        <paper-card heading="Emmental" image="http://placehold.it/350x150">
-            <div class="card-content">
-                Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+        <style>
+        .card {
+          
+            max-width: 400px;
+            max-height: 400px;
+            margin: 10px;
+            @apply(--layout-horizontal);
+        }
+        
+        .rate-image {
+            width: 100%;
+        }
+        
+        .rate-content {
+            @apply(--layout-flex);
+            float: left;
+        }
+        
+        .header {
+            @apply(--paper-font-headline);
+        }
+        
+        .rate-header {
+            @apply(--paper-font-headline);
+        }
+        
+        .rate-name {
+            color: var(--paper-grey-600);
+            margin: 10px 0;
+        }
+        
+        .image-wrap {
+            max-height: 450px;
+            overflow: hidden;
+            max-width: 800px;
+        }
+        
+        .description {
+            width: auto;
+            height: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        </style>
+        <paper-card class="card">
+            <div class="rate-content">
+                <div id="content" class="card-content">
+                    <div class="rate-header">{{name}}</div>
+                    <div class="rate-name">{{brand}} {{price}}</div>
+                    <div class="description">{{description}}</div>
+                </div>
+                <div class="card-actions">
+                    <paper-button>Buy!!</paper-button>
+                </div>
             </div>
-            <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
+            <div class="image-wrap" id="wrapper">
+                <img class="rate-image" src="{{image}}">
             </div>
         </paper-card>
     </template>
