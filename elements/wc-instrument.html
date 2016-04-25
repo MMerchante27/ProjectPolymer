@@ -2,7 +2,6 @@
     <template>
         <style>
         .card {
-          
             max-width: 400px;
             max-height: 400px;
             margin: 10px;
@@ -48,11 +47,13 @@
             <div class="rate-content">
                 <div id="content" class="card-content">
                     <div class="rate-header">{{name}}</div>
-                    <div class="rate-name">{{brand}} {{price}}</div>
+                    <div class="rate-name">{{brand}} {{price}}$</div>
                     <div class="description">{{description}}</div>
                 </div>
                 <div class="card-actions">
-                    <paper-button>Buy!!</paper-button>
+                    <paper-button on-tap="buy">
+                        <iron-icon icon="icons:shopping-cart"></iron-icon>
+                    </paper-button>
                 </div>
             </div>
             <div class="image-wrap" id="wrapper">
@@ -99,7 +100,13 @@
 
             },
 
-
+            buy: function(e, detail) {
+                console.log(e);
+                this.fire('buy', {
+                    name: this.name,
+                    price: this.price
+                });
+            }
 
         })
 

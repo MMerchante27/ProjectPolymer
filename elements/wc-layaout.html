@@ -1,7 +1,7 @@
 <dom-module id="wc-layaout">
     <template>
         <style>
-        .button {
+        .buttonMenu {
             text-transform: initial;
             width: 100%;
         }
@@ -20,15 +20,15 @@
             <paper-header-panel drawer scroll>
                 <paper-toolbar></paper-toolbar>
                 <paper-menu>
-                    <paper-button id="btn" class="button" raised value="All" on-tap="selectCategory"> All elements </paper-button>
+                    <paper-button id="btn" class="buttonMenu" raised value="All" on-tap="selectCategory"> All elements </paper-button>
                     <paper-menu>
                         <paper-submenu>
-                            <paper-button id="btn1" class="button" raised value="Guitar" on-tap="selectCategory"> Guitars </paper-button>
+                            <paper-button id="btn1" class="buttonMenu" raised value="Guitar" on-tap="selectCategory"> Guitars </paper-button>
                             <paper-menu class="menu-content">
                                 <div class="container">
                                     <div class="subcategories">
-                                        <paper-button id="cat1" class="button" raised value="Electric" on-tap="selectSubCategory"> Electric </paper-button>
-                                        <paper-button id="cat2" class="button" raised value="Acoustic" on-tap="selectSubCategory"> Acoustic </paper-button>
+                                        <paper-button id="cat1" class="buttonMenu" raised value="ElectricGuitar" on-tap="selectSubCategory"> Electric </paper-button>
+                                        <paper-button id="cat2" class="buttonMenu" raised value="AcousticGuitar" on-tap="selectSubCategory"> Acoustic </paper-button>
                                     </div>
                                 </div>
                                 <br>
@@ -38,39 +38,26 @@
                             </paper-menu>
                         </paper-submenu>
                         <paper-submenu>
-                            <paper-button id="btn2" class="button" raised value="Bass" on-tap="selectCategory"> Basses </paper-button>
+                            <paper-button id="btn2" class="buttonMenu" raised value="Bass" on-tap="selectCategory"> Basses </paper-button>
                             <paper-menu class="menu-content">
                                 <div class="subcategories">
-                                    <paper-button id="cat3" class="button" raised value="Electric" on-tap="selectSubCategory"> Electric </paper-button>
-                                    <paper-button id="cat4" class="button" raised value="Acoustic" on-tap="selectSubCategory"> Acoustic </paper-button>
+                                    <paper-button id="cat3" class="buttonMenu" raised value="ElectricBass" on-tap="selectSubCategory"> Electric </paper-button>
+                                    <paper-button id="cat4" class="buttonMenu" raised value="AcousticBass" on-tap="selectSubCategory"> Acoustic </paper-button>
                                 </div>
                             </paper-menu>
                         </paper-submenu>
                     </paper-menu>
-                    <!--  <paper-menu>
-                    <paper-submenu>
-                        <paper-menu class="menu-content">
-                           
-                                <paper-button id="btn" class="button" raised value="All" on-tap="selectCategory"> All elements </paper-button>
-                                 <paper-menu>
-                                <paper-button id="btn1" class="button" raised value="Guitar" on-tap="selectCategory"> Guitars </paper-button>
-
-                               
-                                </div>
-                            </paper-menu>
-                    </paper-submenu>
-                    </paper-menu> -->
             </paper-header-panel>
             <paper-header-panel main>
                 <paper-toolbar>
                     <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
                     <span class="title">BabelInstruments</span>
                 </paper-toolbar>
-                <div class="categoria"></div>
-                <wc-instruments instruments="{{selected}}"></wc-instruments>
+                <wc-instruments id="evento" instruments="{{selected}}"></wc-instruments>
             </paper-header-panel>
         </paper-drawer-panel>
         <wc-source instruments="{{instruments}}" instrument="{{instrument}}"></wc-source>
+        <wc-shopping eve="{{eve}}"></wc-shopping>
     </template>
     <script>
     (function() {
@@ -83,25 +70,52 @@
                         return [];
                     }
                 },
+                buyProd: {
+                    type: Array,
+                    observer: 'whenBuyProduct',
+                    value: function() {
+                        return [];
+                    },
+                    notify: true,
+                },
                 instruments: {
                     type: Array,
                     value: function() {
                         return [];
                     }
                 },
+                shortView: true,
 
                 selected: {
                     type: Array,
                     value: function() {
                         return [];
                     }
-                }
+                },
+
+
             },
 
             ready: function() {
+                this.eve = this.$.evento;
+               
             },
 
+            whenBuyProduct: function(after, before) {
+                console.log("after", after);
+                console.log("before", before);
+            },
+
+
+            toggleView: function() {
+                $(".subcategories").hide();
+
+            },
+
+
+
             selectSubCategory: function(e) {
+                e.stopPropagation();
                 var selectedAll = [];
                 var selectedGuitarElect = [];
                 var selectedBassElect = [];
@@ -111,35 +125,48 @@
                 var ide = e.target.getAttribute('id');
                 var clase = this.$[ide].getAttribute('value');
 
-                if (clase == "Electric") {
+                if (clase == "ElectricGuitar") {
                     for (i = 0; i < this.instruments.length; i++) {
                         if ((this.instruments[i].category == "Guitar") && (this.instruments[i].subcategory == "Electric")) {
-                            console.log(this.instruments[i]);
+                            console.log("holi");
                             selectedGuitarElect.push(this.instruments[i]);
                             this.selected = selectedGuitarElect.slice();
-                        } else if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Electric")) {
+                        }
+
+
+                    }
+                } else if (clase == "ElectricBass") {
+                    for (i = 0; i < this.instruments.length; i++) {
+
+                        if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Electric")) {
+
+                            console.log("holi2");
+
                             selectedBassElect.push(this.instruments[i]);
                             this.selected = selectedBassElect.slice();
 
                         }
-
                     }
-                } else if (clase == "Acoustic") {
+
+                } else if (clase == "AcousticGuitar") {
                     for (i = 0; i < this.instruments.length; i++) {
                         if ((this.instruments[i].category == "Guitar") && (this.instruments[i].subcategory == "Acoustic")) {
 
                             selectedGuitarAcoust.push(this.instruments[i]);
                             this.selected = selectedGuitarAcoust.slice();
 
-                        } else if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Acoustic")) {
+                        }
+
+                    }
+
+                } else if (clase == "AcousticBass") {
+                    for (i = 0; i < this.instruments.length; i++) {
+                        if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Acoustic")) {
 
                             selectedBassAcoust.push(this.instruments[i]);
                             this.selected = selectedBassAcoust.slice();
                         }
                     }
-
-
-
                 }
 
                 console.log("Final", this.selected);
@@ -153,29 +180,32 @@
                 var clase = this.$[ide].getAttribute('value');
                 if (clase == "All") {
                     this.selected = this.instruments;
-                } else {
-                    if (clase == "Guitar") {
-                        for (i = 0; i < this.instruments.length; i++) {
-                            if (this.instruments[i].category == "Guitar") {
-                                selectedGuitar.push(this.instruments[i]);
-                                this.selected = selectedGuitar.slice();
-                            }
-                        }
-                    } else if (clase == "Bass") {
-                        for (i = 0; i < this.instruments.length; i++) {
-                            if (this.instruments[i].category == "Bass") {
+                } else if (clase == "Guitar") {
+                    for (i = 0; i < this.instruments.length; i++) {
+                        if (this.instruments[i].category == "Guitar") {
+                            selectedGuitar.push(this.instruments[i]);
+                            this.selected = selectedGuitar.slice();
 
-                                selectedBass.push(this.instruments[i]);
-                                this.selected = selectedBass.slice();
-
-                            }
                         }
                     }
+                } else if (clase == "Bass") {
+                    if (this.indexBass == 0) {
+                        this.indexBass = 1;
+                    } else this.indexBass = 0;
+                    for (i = 0; i < this.instruments.length; i++) {
+                        if (this.instruments[i].category == "Bass") {
 
+                            selectedBass.push(this.instruments[i]);
+                            this.selected = selectedBass.slice();
 
+                        }
+                    }
                 }
 
+
             }
+
+
 
         })
 

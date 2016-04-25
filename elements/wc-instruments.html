@@ -9,6 +9,7 @@
             margin: 10px;
         }
         </style>
+        <h1>Instrument List </h1>
         <template is="dom-repeat" items="{{instruments}}" as="instrument">
             <div class="container">
                 <wc-instrument name="{{instrument.name}}" category="{{instrument.category}}" subcategory="{{instrument.subcategory}}" image="{{instrument.image}}" description="{{instrument.description}}" brand="{{instrument.brand}}" price="{{instrument.price}}">

@@ -1,0 +1,74 @@
+<dom-module id="wc-shopping">
+    <template>
+        <style>
+
+        </style>
+        <h1>Hola</h1>
+        <button on-click="showPro">Hola</button>
+        <paper-dialog id="buyDia">
+            <h2>Shopping cart</h2>
+            <paper-dialog-scrollable>
+                <template is="dom-repeat" items="{{items}}" as="prod">
+                   <p>{{prod.name}}</p> 
+                   <p>{{prod.price}}</p> 
+                </template>
+            </paper-dialog-scrollable>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cancel</paper-button>
+                <paper-button dialog-confirm>Accept</paper-button>
+            </div>
+        </paper-dialog>
+    </template>
+    <script>
+    Polymer({
+        is: 'wc-shopping',
+        properties: {
+            buyProd: {
+                type: Array,
+            },
+
+            buyProdu: {
+                type: Array,
+                value: function() {
+                    return [];
+                }
+            },
+
+            eve: {
+                type: Object,
+                observer: "whenEve"
+            },
+
+            items: {
+                type: Array,
+                value: function() {
+                    return [];
+                }
+            }
+        },
+
+        showPro: function() {
+            this.buyProdu = this.buyProd.slice();
+            this.notifyPath('buyProdu', this.buyProdu)
+        },
+
+        whenEve: function(after, before) {
+            console.log("hola");
+            after.addEventListener('buy', function(e) {
+                console.log("evento");
+                // Polymer.dom(this).querySelector('#buyDia');
+                this.$.buyDia.open();
+                this.$.buyDia.modal = true;
+                this.push('items', e.detail);
+              
+            }.bind(this))
+        }
+
+
+
+
+
+
+    });
+    </script>
+</dom-module>
