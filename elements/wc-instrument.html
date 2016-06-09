@@ -8,11 +8,11 @@
             @apply(--layout-horizontal);
         }
         
-        .rate-image {
+        .image {
             width: 100%;
         }
         
-        .rate-content {
+        .content {
             @apply(--layout-flex);
             float: left;
         }
@@ -21,11 +21,7 @@
             @apply(--paper-font-headline);
         }
         
-        .rate-header {
-            @apply(--paper-font-headline);
-        }
-        
-        .rate-name {
+        .name {
             color: var(--paper-grey-600);
             margin: 10px 0;
         }
@@ -38,16 +34,16 @@
         
         .description {
             width: auto;
-            height: 200px;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            height: 190px;
+            overflow-y: scroll;
         }
+
         </style>
         <paper-card class="card">
-            <div class="rate-content">
+            <div class="content">
                 <div id="content" class="card-content">
-                    <div class="rate-header">{{name}}</div>
-                    <div class="rate-name">{{brand}} {{price}}$</div>
+                    <div class="header">{{name}}</div>
+                    <div class="name">{{brand}} {{price}}$</div>
                     <div class="description">{{description}}</div>
                 </div>
                 <div class="card-actions">
@@ -57,7 +53,7 @@
                 </div>
             </div>
             <div class="image-wrap" id="wrapper">
-                <img class="rate-image" src="{{image}}">
+                <img class="image" src="{{image}}">
             </div>
         </paper-card>
     </template>
@@ -111,5 +107,7 @@
         })
 
     })();
+
     </script>
 </dom-module>
+

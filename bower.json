@@ -2,9 +2,9 @@
   "name": "cinema-project",
   "version": "1.0.0",
   "authors": [
-    "Javier Velez Reyes <javier.velez.reyes@gmail.com>"
+    "Miriam Merchante Dominguez"
   ],
-  "description": "A cinema project",
+  "description": "A instrument shop project",
   "main": "index.html",
   "keywords": [
     "web-components",

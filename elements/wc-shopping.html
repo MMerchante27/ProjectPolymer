@@ -1,10 +1,7 @@
 <dom-module id="wc-shopping">
     <template>
         <style>
-
         </style>
-        <h1>Hola</h1>
-        <button on-click="showPro">Hola</button>
         <paper-dialog id="buyDia">
             <h2>Shopping cart</h2>
             <paper-dialog-scrollable>
@@ -53,10 +50,7 @@
         },
 
         whenEve: function(after, before) {
-            console.log("hola");
             after.addEventListener('buy', function(e) {
-                console.log("evento");
-                // Polymer.dom(this).querySelector('#buyDia');
                 this.$.buyDia.open();
                 this.$.buyDia.modal = true;
                 this.push('items', e.detail);
