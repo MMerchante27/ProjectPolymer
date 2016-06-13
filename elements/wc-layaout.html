@@ -128,7 +128,6 @@
                 if (clase == "ElectricGuitar") {
                     for (i = 0; i < this.instruments.length; i++) {
                         if ((this.instruments[i].category == "Guitar") && (this.instruments[i].subcategory == "Electric")) {
-                            console.log("holi");
                             selectedGuitarElect.push(this.instruments[i]);
                             this.selected = selectedGuitarElect.slice();
                         }
@@ -139,9 +138,6 @@
                     for (i = 0; i < this.instruments.length; i++) {
 
                         if ((this.instruments[i].category == "Bass") && (this.instruments[i].subcategory == "Electric")) {
-
-                            console.log("holi2");
-
                             selectedBassElect.push(this.instruments[i]);
                             this.selected = selectedBassElect.slice();
 
@@ -169,7 +165,6 @@
                     }
                 }
 
-                console.log("Final", this.selected);
             },
 
             selectCategory: function(e) {
